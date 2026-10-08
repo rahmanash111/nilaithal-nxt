@@ -1,10 +1,10 @@
 const TermsAndConditions = () => {
     return (
         <>
-            <section className="min-h-[30vh] flex flex-col items-center justify-center gap-5">
-                <h2 className="font-bold text-4xl ">Terms and Conditions</h2>
+            <section className="min-h-[20vh] md:min-h-[30vh] flex flex-col items-center justify-center gap-5">
+                <h2 className="font-bold text-4xl text-(--primary-light)">Terms and Conditions</h2>
                 <h4 className="font-semibold text-xl">
-                    Date of Last Revision:July 05,2024
+                    Date of Last Revision:July 05,2026
                 </h4>
             </section>
             <hr className="w-1/2 left-1/2 transform -translate-x-1/2 absolute" />
@@ -15,7 +15,7 @@ const TermsAndConditions = () => {
                     and conditions.
                 </p>
                 <hr className="w-1/2" />
-                <div className="flex items-start flex-col gap-4">
+                <div className="flex items-start flex-col gap-4 mb-18">
                     <ul className="flex flex-col gap-4  ">
                         <li>
                             A. This document is an electronic record in terms of Information

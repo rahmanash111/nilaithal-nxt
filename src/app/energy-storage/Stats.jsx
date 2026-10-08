@@ -1,0 +1,77 @@
+import { FileCheck2, Gauge, Trophy, Users } from "lucide-react";
+import AnimatedCounter from "../services/AnimatedCounter";
+import img1 from "../../assets/storage deployed.webp"
+import img2 from "../../assets/system relibility.png"
+import img3 from "../../assets/client across.png"
+import img4 from "../../assets/project deliverd.png";
+import Image from "next/image";
+
+export const stats = [
+  {
+    icon: img1,
+    value: 100,
+    suffix: "+",
+    label: "Storage Deployed",
+    color: "white",
+    bg: "bg-blue-50",
+  },
+  {
+    icon: img2,
+    value: 98,
+    suffix: "%",
+    label: "System Reliability",
+    color: "white",
+    bg: "bg-lime-50",
+  },
+  {
+    icon: img4,
+    value: 25,
+    suffix: "+",
+    label: "Projects Delivered",
+    color: "white",
+    bg: "bg-amber-50",
+  },
+  {
+    icon: img3,
+    value: 50,
+    suffix: "+",
+    label: "Clients Across Sectors",
+    color: "white",
+    bg: "bg-violet-50",
+  },
+];
+
+export default function Stats() {
+  return (
+    <div className="relative z-20 md:-mt-24 px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-6xl rounded-2xl bg-white px-6 py-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] sm:px-10">
+        <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-y-0 sm:divide-y-0">
+          {stats.map(({ icon, value, suffix, label, color, bg }, i) => (
+            <div
+              key={label}
+              className={`flex items-center mr-4 gap-4 pt-4 sm:pt-0 sm:px-6 ${
+                i !== 0 ? "sm:border-l sm:border-gray-100" : ""
+              }`}
+            >
+              <span
+                className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gray-100 text-(--primary-light)`}
+              >
+                <Image src={icon} alt={icon} className="h-10 w-10" />
+                {/* <Icon className="h-6 w-6" strokeWidth={2} /> */}
+              </span>
+              <span className="leading-tight">
+                <span className="block text-2xl font-semibold text-gray-900 sm:text-3xl">
+                  <AnimatedCounter value={value} suffix={suffix} />
+                </span>
+
+                <span className="block text-xs text-gray-500 sm:text-sm">
+                  {label}
+                </span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

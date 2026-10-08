@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@apollo/client": "^4.2.7",
+    "@gsap/react": "^2.1.2",
     "graphql": "^16.14.2",
-    "lucide-react": "^1.24.0",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.48.0",
     "next": "16.2.10",
+    "notistack": "^3.0.2",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

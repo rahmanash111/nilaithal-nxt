@@ -1,59 +1,59 @@
 "use client";
 
-import { Sun, Wind, Zap, BatteryCharging, ArrowRight, CheckSquare } from "lucide-react";
+import solar from "../../../assets/solar_energy.webp"
+import ev from "../../../assets/ev_charging.webp"
+import storage from "../../../assets/energy_storage.webp"
+import innovative from "../../../assets/innovative.webp"
+import tailored from "../../../assets/tailored.webp"
+import green_planet from "../../../assets/green_planet.webp"
 
-/**
- * EnergySolutions
- * -----------------------------------------------------------------------
- * Static, fully responsive Next.js (App/Pages router compatible) section
- * built with Tailwind CSS only — no external CSS files needed.
- *
- * Notes for Hostinger static export:
- * - Uses plain <img> tags (not next/image) so it works with `next export`
- *   / static hosting without image-optimization config.
- * - Icons come from `lucide-react` (npm i lucide-react).
- * - Replace the Unsplash image URL with your own asset in /public if you
- *   want to self-host it.
- * ----------------------------------------------------------------------- */
+
+
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const solutions = [
   {
-    icon: Sun,
+    icon: solar,
     title: "Solar Energy",
+    href: "/solar",
     description:
-      "High-efficiency solar solutions for homes, businesses & industries.",
+      "High-efficiency solar panel systems for homes, businesses, and industries. Our solar installations are designed to maximize energy yield, reduce electricity bills, and pay for themselves faster, backed by proper site assessment, not guesswork.",
   },
   {
-    icon: Zap,
+    icon: ev,
     title: "EV Charging Solutions",
+    href: "/ev-charging",
     description:
-      "Smart and fast EV charging solutions for a greener tomorrow.",
+      "Smart, fast EV charging solutions built for a greener tomorrow. Whether it's a home charger, a workplace charging point, or a public charging station through our India1 Charger network, we make EV charging simple and dependable.",
   },
   {
-    icon: BatteryCharging,
+    icon: storage,
     title: "Energy Storage Solutions",
+    href: "/energy-storage",
     description:
-      "Advanced storage systems for energy independence and efficiency.",
+      "Advanced battery storage systems for energy independence and efficiency. Store solar power when it's abundant, use it when you need it. and keep your home or business running through grid outages.",
   },
 ];
 
 const aboutPoints = [
-  "Innovative & Reliable Technologies",
-  "Tailored Energy Solutions",
-  "Commitment to a Greener Planet",
+  { text: "Innovative & Reliable Technologies", icon: innovative, },
+  { text: "Tailored Energy Solutions", icon: tailored, },
+  { text: "Commitment to a Greener Planet", icon: green_planet, }
 ];
 
 export default function EnergySolutions() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gray-50">
       {/* decorative dot grids */}
       <div
         className="pointer-events-none absolute left-0 top-10 hidden h-40 w-40 opacity-60 sm:block"
-      // style={{ backgroundImage: "radial-gradient(circle, #d9dee6 1.5px, transparent 1.5px)",backgroundSize: "14px 14px", }}
+        // style={{ backgroundImage: "radial-gradient(circle, #d9dee6 1.5px, transparent 1.5px)",backgroundSize: "14px 14px", }}
       />
       <div
         className="pointer-events-none absolute right-0 top-0 hidden h-56 w-56 opacity-60 sm:block"
-      // style={{ backgroundImage: "radial-gradient(circle, #d9dee6 1.5px, transparent 1.5px)", backgroundSize: "14px 14px", }} 
+        // style={{ backgroundImage: "radial-gradient(circle, #d9dee6 1.5px, transparent 1.5px)", backgroundSize: "14px 14px", }}
       />
       <div
         className="pointer-events-none absolute bottom-10 right-10 hidden h-32 w-32 opacity-50 lg:block"
@@ -64,12 +64,7 @@ export default function EnergySolutions() {
         }}
       />
 
-      {/* small floating leaf accent */}
-      <div className="pointer-events-none absolute left-4 top-40 hidden -rotate-12 text-green-600/70 sm:block lg:left-10">
-        <LeafIcon className="h-10 w-10" />
-      </div>
-
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-4 md:px-0">
         {/* ---------------- Heading ---------------- */}
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-bold tracking-[0.2em] text-green-600">
@@ -80,76 +75,104 @@ export default function EnergySolutions() {
             <br />
             for a <span className="text-green-600">Sustainable</span> World
           </h2>
+          <p className="text-center text-gray-600 mt-8">
+            From rooftop solar panels to EV charging infrastructure and battery
+            storage, Nilaithal builds renewable energy systems that work as hard
+            as you do. Every solution is engineered for Indian climate
+            conditions, grid requirements, and long-term reliability.
+          </p>
         </div>
 
         {/* ---------------- Solution cards ---------------- */}
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {solutions.map(({ icon: Icon, title, description }) => (
+          {solutions.map(({ icon: Icon, title, description, href }) => (
             <div
               key={title}
-              className="group rounded-2xl bg-white p-6 shadow-[0_2px_20px_rgba(15,23,42,0.06)] ring-1 ring-slate-100 transition-shadow hover:shadow-[0_8px_30px_rgba(15,23,42,0.10)]"
+              className="flex flex-col justify-center items-center gap-3 group rounded-2xl bg-white p-6 shadow-[0_2px_20px_rgba(15,23,42,0.06)] ring-1 ring-slate-100 transition-shadow hover:shadow-[0_8px_30px_rgba(15,23,42,0.10)]"
             >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
-                <Icon className="h-7 w-7 text-green-600" strokeWidth={1.75} />
+              <div className="flex h-22 w-22 mb-5 items-center justify-center rounded-full bg-green-50">
+                <Image alt="img" src={Icon} className="h-14 w-14" />
               </div>
-              <h3 className="text-[16px] lg:text-[20px] font-bold text-slate-900">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-500">{description}</p>
-              <a href="#" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:text-green-600">
+              <h3 className="text-[16px] lg:text-[20px] font-bold text-slate-900">
+                {title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-500 text-center">
+                {description}
+              </p>
+              <Link
+                href={href}
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:text-green-600"
+              >
                 Learn More
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
 
         {/* ---------------- CTA button ---------------- */}
         <div className="mt-10 flex justify-center">
-          <a
-            href="#"
+          <Link
+            href="/services"
             className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-green-600/20 transition-colors hover:bg-green-700"
           >
             View All Services
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
 
         {/* ---------------- About / Sustainability section ---------------- */}
-        <div className="mt-20 grid grid-cols-1 items-center gap-10 lg:mt-28 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-22 grid grid-cols-1 items-center gap-10 lg:mt-28 lg:grid-cols-2 lg:gap-16">
           {/* Left: text column */}
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-green-600">
               ABOUT NILAITHAL
             </p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-              Committed to <span className="text-green-600">Sustainability.</span>
+              Committed to{" "}
+              <span className="text-green-600">Sustainability.</span>
               <br />
               Driven by <span className="text-green-600">Innovation.</span>
             </h2>
+
             <p className="mt-5 max-w-md text-sm leading-relaxed text-slate-500">
-              At Nilaithal, we believe in the power of nature to create a
-              cleaner, smarter, and more sustainable world. Our solutions are
-              designed to reduce carbon footprints and build a better
-              tomorrow.
+              At Nilaithal, we believe clean energy shouldn't be complicated.
+              We're a Chennai-based renewable energy company built around one
+              goal: making solar power, EV charging, and energy storage
+              accessible, reliable, and genuinely worth the investment for
+              homeowners, businesses, and communities across India.
+              <br />
+              <br />
+              We don't believe in one-size-fits-all installations. Every project
+              starts with understanding how you actually use energy, then
+              designing a system around that not the other way around.
             </p>
 
             <ul className="mt-6 space-y-3">
-              {aboutPoints.map((point) => (
-                <li key={point} className="flex items-center gap-3">
-                  <CheckSquare className="h-4 w-4 flex-shrink-0 text-green-600" />
+              {aboutPoints.map((point, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  {/* <CheckSquare className="h-4 w-4 flex-shrink-0 text-green-600" /> */}
+                  <div className="flex items-center justify-center bg-gray-200 rounded-full p-1">
+                    <Image
+                      className="h-[25px] w-[25px]"
+                      src={point.icon}
+                      alt={point.text}
+                    />
+                  </div>
                   <span className="text-sm font-medium text-slate-700">
-                    {point}
+                    {point.text}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <a
-              href="#"
+            <Link
+              href="/about"
               className="mt-8 inline-flex items-center gap-2 rounded-xl bg-green-600 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-green-600/20 transition-colors hover:bg-green-700"
             >
               More About Us
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
 
           {/* Right: image with overlapping card */}
@@ -164,7 +187,6 @@ export default function EnergySolutions() {
 
             {/* overlapping info card */}
             <div className="absolute -bottom-10 md:-bottom-8 left-8 md:left-4 w-[calc(100%-2rem)] max-w-xs rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-100 sm:-left-10 sm:bottom-35">
-              <LeafIcon className="h-6 w-6 text-green-600" />
               <p className="mt-3 text-lg font-bold leading-snug text-slate-900">
                 Redefining Energy
                 <br />
@@ -179,28 +201,3 @@ export default function EnergySolutions() {
   );
 }
 
-/* Small hand-drawn style leaf icon to match the brand mark in the design */
-function LeafIcon({ className = "h-6 w-6" }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <path
-        d="M20 4C10 4 4 10 4 18c0 1 0 2 1 2s2-1 2-2c0-6 5-11 11-11 1 0 2-1 2-2s-1-1 0-1Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M6 18C10 14 14 10 19 6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}

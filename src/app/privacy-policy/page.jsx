@@ -1,12 +1,12 @@
 const PrivacyPolicy = () => {
     return (
         <>
-            <section className='min-h-[30vh] flex flex-col items-center justify-center gap-5'>
-                <h2 className='font-bold text-4xl '>Privacy Policy</h2>
+            <section className='min-h-[20vh] md:min-h-[30vh] flex flex-col items-center justify-center gap-5'>
+                <h2 className='font-bold text-4xl text-(--primary-light)'>Privacy Policy</h2>
                 <h4 className='font-semibold text-xl'>Date of Last Revision:July 03,2026</h4>
             </section>
             <hr className='w-1/2 left-1/2 transform -translate-x-1/2 absolute' />
-            <section className='lg:px-20 md:px-20 px-10 flex flex-col items-center my-5 gap-5'>
+            <section className='lg:px-20 md:px-20 px-10 flex flex-col items-center my-5 gap-5  mb-18'>
                 <p>Nilaithal is committed to protecting your privacy. This policy explains how we collect, use, and share your personal information.</p>
                 <hr className='w-1/2' />
                 <div className='flex items-start flex-col gap-4'>

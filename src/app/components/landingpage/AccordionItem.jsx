@@ -26,7 +26,7 @@ const AccordionItem = ({ item, onClick }) => {
                 `}
             </style>
             <button
-                className="box-border w-full text-left p-4 focus:outline-none bg-gray-100 rounded-lg shadow-md flex justify-between items-center my-4 font-medium"
+                className="box-border w-full text-left p-4 focus:outline-none bg-gray-100 rounded-lg shadow-md flex justify-between items-center my-4 font-medium text-gray-800"
                 onClick={() => onClick(item.id)}
             >
                 {item.question}

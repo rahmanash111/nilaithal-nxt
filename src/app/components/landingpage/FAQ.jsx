@@ -10,21 +10,21 @@ export default function FAQ() {
             id: 1,
             question: "What products does Nilaithal offer?",
             answer:
-                "We offer a range of products including wind turbines, solar panels, electric vehicle (EV) chargers, and India1 Charger - EV charging station aggregator apps.",
+                "Nilaithal offers solar panel systems, EV charging solutions (including our India1 Charger network), and energy storage systems for residential, commercial, and industrial use.",
             open: true
         },
         {
             id: 2,
             question: "How does Nilaithal contribute to sustainability?",
             answer:
-                "Nilaithal is dedicated to transforming the energy landscape by harnessing renewable resources, reducing reliance on fossil fuels, and minimizing environmental impact.",
+                "By helping homes and businesses switch from grid/fossil-fuel-dependent power to solar and stored renewable energy, we directly reduce carbon emissions per installation, and every EV charger we deploy supports cleaner transport infrastructure.",
             open: false
         },
         {
             id: 3,
             question: "Are Nilaithal's products suitable for residential use?",
             answer:
-                "Yes, our products are designed for both residential and commercial applications, offering clean and efficient energy solutions for various needs.",
+                "Yes. Our solar and storage systems are designed for both residential and commercial properties, scaled to match household energy needs and budgets.",
             open: false
         },
         {
@@ -38,14 +38,14 @@ export default function FAQ() {
             id: 5,
             question: "Does Nilaithal provide installation services?",
             answer:
-                "Yes, we offer installation services for our products to ensure optimal performance and efficiency.",
+                "Yes, every system we sell is backed by professional installation and post-installation support, not just equipment supply.",
             open: false
         },
         {
             id: 6,
             question: "How can I purchase Nilaithal's products?",
             answer:
-                "You can contact us directly through our website or get in touch with our authorized distributors for purchasing inquiries.",
+                "You can get started with a free consultation through our website or by contacting our team directly, we'll assess your needs and recommend the right solution before any purchase decision.",
             open: false
         },
     ])
@@ -59,7 +59,7 @@ export default function FAQ() {
     };
 
     return (
-        <section className="grid grid-cols-1 gap-8 sm:gap-0 sm:grid-cols-[40%_60%] py-10 px-[5%] min-h-[800px] max-w-[1500px]" style={{ backgroundColor: "#f9fbf5", }}>
+        <section className="grid grid-cols-1 gap-8 sm:gap-0 sm:grid-cols-[40%_60%] py-10 px-[5%] min-h-[750px] max-w-[1500px]" >
             <div className="justify-center flex flex-col">
                 {/* <h2 className="heading-title text-6xl">FAQ</h2>
                 <h4 className="sub-text">About Company</h4> */}
@@ -70,7 +70,7 @@ export default function FAQ() {
                     <p className="description">
                         The most comprehensive complete-system warranty in the solar industry. Hassle-free replacement, repair or reimbursement.
                     </p>
-                    <span>Any Questions? <a href="mailto:milin@india1charger" style={{ color: '#469d2c' }}>milin@india1charger</a></span>
+                    <span>Got a question we haven't answered here? Reach out anytime. <a href="mailto:milin@india1charger" style={{ color: '#469d2c' }}>milin@india1charger</a></span>
                 </div>
 
             </div>

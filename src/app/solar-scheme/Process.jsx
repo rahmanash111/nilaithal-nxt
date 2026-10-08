@@ -1,0 +1,268 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  MessagesSquare,
+  Map,
+  Settings,
+  ShieldCheck,
+  ArrowRight,
+  ArrowDown,
+  Sprout,
+} from "lucide-react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const steps = [
+  {
+    number: "01",
+    icon: MessagesSquare,
+    title: "Consultation",
+    description:
+      "We start by visiting your home for a free, no-pressure site assessment. Our energy advisor reviews your EB bills, roof area, shading conditions, and subsidy eligibility. giving you a clear picture of exactly what you'll save before any commitment is made.",
+  },
+  {
+    number: "02",
+    icon: Map,
+    title: "Design & Plan",
+    description:
+      "Our engineers design a custom rooftop solar system tailored to your roof space, daily energy consumption, and budget. We calculate your expected generation, monthly savings, and exact subsidy entitlement. and submit your design for DISCOM feasibility approval on your behalf.",
+  },
+  {
+    number: "03",
+    icon: Settings,
+    title: "Implementation",
+    description:
+      "Once approved, our certified technicians handle the complete installation - structural mounting, panel wiring, inverter setup, earthing, and commissioning. We manage all DISCOM inspections, net meter applications, and PM Surya Ghar portal submissions so you don't have to deal with any paperwork.",
+  },
+  {
+    number: "04",
+    icon: ShieldCheck,
+    title: "Support & Maintain",
+    description:
+      "After commissioning, we submit your completion certificate and track your subsidy credit. directly to your bank account within 30 days. Our team also provides ongoing system monitoring and annual maintenance to keep your solar panels performing at peak output for 25+ years.",
+  },
+];
+
+// Circumference of the r=46 ring, and a quarter (90°) arc length of it.
+const RING_RADIUS = 46;
+const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
+const ARC_LENGTH = RING_CIRCUMFERENCE / 4;
+
+function StepIcon({ icon: Icon, number }) {
+  return (
+    <div className="relative h-28 w-28 shrink-0">
+      {/* Pale track ring + short green accent arc (top-left quarter) */}
+      <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full">
+        <circle
+          cx="50"
+          cy="50"
+          r={RING_RADIUS}
+          fill="none"
+          stroke="#E3F2D9"
+          strokeWidth="6"
+        />
+        <circle
+          cx="50"
+          cy="50"
+          r={RING_RADIUS}
+          fill="none"
+          stroke="#8BC53F"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeDasharray={`${ARC_LENGTH} ${RING_CIRCUMFERENCE}`}
+          transform="rotate(180 50 50)"
+        />
+      </svg>
+
+      {/* Solid icon circle */}
+      <div className="absolute inset-[18px] flex items-center justify-center rounded-full bg-[#8bc53f] shadow-md shadow-[#52d416]/30">
+        <Icon className="h-7 w-7 text-white" strokeWidth={2} />
+      </div>
+
+      {/* Number badge */}
+      <div className="absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[11px] font-bold text-[#52d416] shadow ring-1 ring-[#52d416]/20">
+        {number}
+      </div>
+    </div>
+  );
+}
+
+export default function Process() {
+  const sectionRef = useRef(null);
+  const stepRefs = useRef([]);
+  const hLineRefs = useRef([]);
+  const vLineRefs = useRef([]);
+  const hArrowRefs = useRef([]);
+  const vArrowRefs = useRef([]);
+
+  // Reset ref buckets on every render before they're re-populated below.
+  stepRefs.current = [];
+  hLineRefs.current = [];
+  vLineRefs.current = [];
+  hArrowRefs.current = [];
+  vArrowRefs.current = [];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set(stepRefs.current, { opacity: 0, y: 50 });
+      gsap.set(hLineRefs.current, { scaleX: 0 });
+      gsap.set(vLineRefs.current, { scaleY: 0 });
+      gsap.set([...hArrowRefs.current, ...vArrowRefs.current], {
+        opacity: 0,
+        scale: 0.4,
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+      });
+
+      steps.forEach((_, i) => {
+        // Step i fades/slides up into place.
+        tl.to(
+          stepRefs.current[i],
+          { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+          i === 0 ? 0 : ">-0.1",
+        );
+
+        if (i < steps.length - 1) {
+          // Then the dotted connector draws in right after it.
+          tl.to(
+            hLineRefs.current[i],
+            {
+              scaleX: 1,
+              duration: 0.3,
+              ease: "power2.out",
+              transformOrigin: "left center",
+            },
+            ">-0.1",
+          );
+          tl.to(
+            vLineRefs.current[i],
+            {
+              scaleY: 1,
+              duration: 0.3,
+              ease: "power2.out",
+              transformOrigin: "top center",
+            },
+            "<",
+          );
+          // ...and the arrow pops in once the line reaches the next step.
+          tl.to(
+            [hArrowRefs.current[i], vArrowRefs.current[i]],
+            { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" },
+            ">-0.1",
+          );
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative mx-auto w-full px-6 py-20 sm:px-12 lg:px-[2%] xl:px-[5%] lg:py-20 overflow-hidden"
+    >
+      {/* Steps */}
+      <div className="relative grid grid-cols-1 sm:grid-cols-[20%_75%] gap-12 mx-auto">
+        <div className="relative flex flex-col mx-auto items-center md:items-start max-w-[300px]">
+          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#52d416]">
+            How We Work
+          </span>
+          <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-[2.3rem] md:text-start text-center">
+            A Simple <br />
+            <span>
+              <span
+                className="text-[#52d416]"
+                style={{ fontFamily: "var(--font-text)", fontWeight: "normal" }}
+              >
+                4-Step{" "}
+              </span>
+              Process
+            </span>
+          </h2>
+          <p className="my-4">
+            From portal registration to subsidy bank credit, we make the entire
+            PM Surya Ghar process simple and hassle-free for you.
+          </p>
+          {/* <Icon className="h-7 w-7 text-white" strokeWidth={2} /> */}
+          <div className="flex items-center gap-3">
+            {/* <Sprout className="h-7 w-7 text-green-600" strokeWidth={2} /> */}
+            <p className="text-(--primary-light)">
+              Small Steps. <br /> A Greener Tomorrow
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row lg:gap-2 xl:gap-6 lg:items-start lg:justify-between">
+          {steps.map((step, i) => (
+            <React.Fragment key={step.number}>
+              <div
+                ref={(el) => (stepRefs.current[i] = el)}
+                className="flex mx-auto w-full max-w-[200px] shrink-0 flex-col items-center text-center opacity-0 lg:w-[190px]"
+              >
+                <StepIcon icon={step.icon} number={step.number} />
+                <div className="mt-5">
+                  <span className="block text-sm font-bold text-[#52d416]">
+                    {step.number}
+                  </span>
+                  <h3 className="mt-1 text-[18px] font-bold text-gray-900">
+                    {step.title}
+                  </h3>
+                  <p className="mx-auto mt-2 max-w-[190px] text-[13px] leading-relaxed text-gray-500">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+
+              {i < steps.length - 1 && (
+                <>
+                  {/* Horizontal dotted connector — desktop only */}
+                  <div className="hidden h-28 flex-1 items-center lg:flex">
+                    <div className="relative w-full">
+                      <div
+                        ref={(el) => (hLineRefs.current[i] = el)}
+                        className="h-0 w-full border-t-2 border-dashed border-gray-300"
+                      />
+                      <span
+                        ref={(el) => (hArrowRefs.current[i] = el)}
+                        className="absolute left-1/2 top-1/2 flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#52d416] shadow"
+                      >
+                        <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Vertical dotted connector — mobile/tablet only */}
+                  <div className="flex h-14 justify-center items-center lg:hidden">
+                    <div className="relative h-full">
+                      <div
+                        ref={(el) => (vLineRefs.current[i] = el)}
+                        className="mx-auto h-full w-0 border-l-2 border-dashed border-gray-300"
+                      />
+                      <span
+                        ref={(el) => (vArrowRefs.current[i] = el)}
+                        className="absolute left-1/2 top-1/2 flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#52d416] shadow"
+                      >
+                        <ArrowDown className="h-3.5 w-3.5" strokeWidth={2.5} />
+                      </span>
+                    </div>
+                  </div>
+                </>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -44,13 +44,13 @@ const Footer = () => {
                 <div className=" pt-5 px-5 flex flex-col md:items-start sm:items-start items-start justify-center">
                     <div className="icon-box flex flex-row items-center gap-4">
                         <Map
+                        className="shrink-0"
                             color="#469d2c"
-                            width={"35px"}
-                            style={{ color: "#469d2c", fontSize: 35 }}
+                            style={{ color: "#469d2c", fontSize: 35, }}
                         />
                         <div className="box-content">
                             <a href="#" className="text-white font-bold text-xl">
-                                No 190 - 192, Hameed Complex Anna Salai,
+                                38, 3rd Cross St, Venkateswara Colony, Nehru Nagar, Perungudi
                             </a>
                             <p className="text-white">Chennai 600006</p>
                         </div>
@@ -60,8 +60,8 @@ const Footer = () => {
             <div style={{ display: 'grid', placeItems: 'center' }}>
                 <hr className="text-white" style={{ width: '70%', textAlign: 'center', }} />
             </div>
-            <div className="grid grid-cols-[1fr,1fr] md:grid-cols-4 pb-10 px-10" >
-                <div className="pt-5 px-5 flex flex-col sm:items-start md:items-center justify-center">
+            <div className="grid grid-cols-[1fr,1fr] md:grid-cols-3 pb-10 px-10 md:px-50" >
+                {/* <div className="pt-5 px-5 flex flex-col sm:items-start md:items-center justify-center">
                     <div className="flex flex-col gap-4">
                         <h4 className="text-white font-bold text-xl text-left">Enter Your email to get the latest news</h4>
                         <div className="mt-3 sm:mt-4 flex max-w-md gap-x-4">
@@ -82,18 +82,18 @@ const Footer = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className=" pt-5 px-5 flex flex-col  md:items-center sm:items-start">
                     <div className="flex flex-col gap-4">
                         <h4 className="text-white text-2xl font-bold text-left">Useful Links</h4>
                         <ul className="footer-links flex flex-col gap-3">
                             <Link href={"/"}><li style={{ color: '#fff' }}>Home</li></Link>
                             <Link href={"/about"}><li style={{ color: '#fff' }}>About us</li></Link>
-                            <Link href={"/Services"}><li style={{ color: '#fff' }}>Services</li></Link>
-                            <Link href={"/blogs"}><li style={{ color: '#fff' }}>Blogs</li></Link>
-                            <Link href={"/partners"}><li style={{ color: '#fff' }}>Partners</li></Link>
-                            <Link href={"/careers"}><li style={{ color: '#fff' }}>Careers</li></Link>
+                            <Link href={"/services"}><li style={{ color: '#fff' }}>Services</li></Link>
                             <Link href={"/contact"}><li style={{ color: '#fff' }}>Contact</li></Link>
+                            {/* <Link href={"/blogs"}><li style={{ color: '#fff' }}>Blogs</li></Link>
+                            <Link href={"/partners"}><li style={{ color: '#fff' }}>Partners</li></Link>
+                            <Link href={"/careers"}><li style={{ color: '#fff' }}>Careers</li></Link> */}
                         </ul>
                     </div>
                 </div>
