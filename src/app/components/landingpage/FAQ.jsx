@@ -70,7 +70,7 @@ export default function FAQ() {
                     <p className="description">
                         The most comprehensive complete-system warranty in the solar industry. Hassle-free replacement, repair or reimbursement.
                     </p>
-                    <span>Got a question we haven't answered here? Reach out anytime. <a href="mailto:milin@india1charger" style={{ color: '#469d2c' }}>milin@india1charger</a></span>
+                    <span>Got a question we haven't answered here? Reach out anytime. <a href="mailto:info@nilaithal.com" style={{ color: '#469d2c' }}>info@nilaithal.com</a></span>
                 </div>
 
             </div>

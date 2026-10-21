@@ -34,8 +34,8 @@ const Footer = () => {
                             style={{ color: "#469d2c", fontSize: 35 }}
                         />
                         <div className="box-content">
-                            <a href="mailto:milin@india1charger" className="text-white font-bold text-xl">
-                                milin@india1charger
+                            <a href="mailto:info@nilaithal.com" className="text-white font-bold text-xl">
+                                info@nilaithal.com
                             </a>
                             <p className="text-white">Email Us for Query</p>
                         </div>

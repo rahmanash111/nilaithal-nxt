@@ -136,7 +136,7 @@ const TermsAndConditions = () => {
                                 (ii) The item must have original packaging.
                             </li>
                             <li>
-                                (iii) If the item that you purchased was on sale, then the item may not be eligible for a return/exchange. Further, only such items are replaced by us (based on an exchange request) if such items are found defective or damaged. If you need to place a return/exchange request for an eligible product/item (as applicable), you need to send us an email <a href="mailto:milin@india1charger.com" className="text-[#6b994b]">milin@india1charger.com</a>.
+                                (iii) If the item that you purchased was on sale, then the item may not be eligible for a return/exchange. Further, only such items are replaced by us (based on an exchange request) if such items are found defective or damaged. If you need to place a return/exchange request for an eligible product/item (as applicable), you need to send us an email <a href="mailto:info@nilaithal.com" className="text-[#6b994b]">info@nilaithal.com</a>.
                             </li>
                         </ul>
                         <p className=" ">
@@ -147,7 +147,7 @@ const TermsAndConditions = () => {
                     <div className="flex flex-col gap-4">
                         <h5 className="font-semibold text-xl">Shipping Policy </h5>
                         <p className="">
-                            The orders for the user are shipped through registered domestic courier companies and/or speed post only. Order are shipped within 15 to 30 days from the date of the order and/or payment or as per the delivery date agreed at the time of order confirmation and delivering of the shipment, subject to courier company / post office norms. Platform Owner shall not be liable for any delay in delivery by the courier company / postal authority. Delivery of all orders will be made to the address provided by the buyer at the time of purchase. Delivery of our services will be confirmed on your email ID as specified at the time of registration. If there are any shipping cost(s) levied by the seller or the Platform Owner (as the case be), the same is not refundable. For any issues in utilizing our services you may contact our helpdesk on <a className="text-[#6b994b]" href="mailto:milin@india1charger.com">milin@india1charger.com</a>
+                            The orders for the user are shipped through registered domestic courier companies and/or speed post only. Order are shipped within 15 to 30 days from the date of the order and/or payment or as per the delivery date agreed at the time of order confirmation and delivering of the shipment, subject to courier company / post office norms. Platform Owner shall not be liable for any delay in delivery by the courier company / postal authority. Delivery of all orders will be made to the address provided by the buyer at the time of purchase. Delivery of our services will be confirmed on your email ID as specified at the time of registration. If there are any shipping cost(s) levied by the seller or the Platform Owner (as the case be), the same is not refundable. For any issues in utilizing our services you may contact our helpdesk on <a className="text-[#6b994b]" href="mailto:info@nilaithal.com">info@nilaithal.com</a>
 
 
                         </p>

@@ -27,7 +27,7 @@ export default function AddressCard() {
           </div>
           <div>
             <p className="font-bold">Email</p>
-            <p className="my-2">milin@india1charger</p>
+            <p className="my-2">info@nilaithal.com</p>
             <p className=" text-gray-500">We reply within 24 hours</p>
           </div>
         </div>

@@ -32,7 +32,7 @@ const Refund = () => {
                             <li>3.1. If you haven’t received a refund yet, first check your bank account again.</li>
                             <li>3.2. Then contact your credit card company, it may take some time before your refund is officially posted.</li>
                             <li>3.3. Next, contact your bank. There is often some processing time before a refund is posted.</li>
-                            <li>3.4. If you’ve done all of this and you still have not received your refund yet, please contact us at<a href='mailto:milin@india1charger' className='text-[#6b994b]'>milin@india1charger</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a>.</li>
+                            <li>3.4. If you’ve done all of this and you still have not received your refund yet, please contact us at<a href='mailto:info@nilaithal.com' className='text-[#6b994b]'>info@nilaithal.com</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a>.</li>
                         </ul>
                     </div>
 
@@ -46,7 +46,7 @@ const Refund = () => {
                     <div className='flex flex-col gap-4'>
                         <h5 className='font-semibold text-xl'>5. Exchanges</h5>
                         <ul className='flex flex-col gap-3 ml-5'>
-                            <li>5.1. We only replace items if they are defective or damaged. If you need to exchange it for the same item, please contact us at <a href='mailto:milin@india1charger' className='text-[#6b994b]'>milin@india1charger</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a>.</li>
+                            <li>5.1. We only replace items if they are defective or damaged. If you need to exchange it for the same item, please contact us at <a href='mailto:info@nilaithal.com' className='text-[#6b994b]'>info@nilaithal.com</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a>.</li>
                         </ul>
                     </div>
 
@@ -62,7 +62,7 @@ const Refund = () => {
                     <div className='flex flex-col gap-4'>
                         <h5 className='font-semibold text-xl'>7. Contact Us</h5>
                         <ul className='flex flex-col gap-3 ml-5'>
-                            <li>7.1. If you have any questions about this privacy policy, please contact us at Email:  <a href='mailto:milin@india1charger' className='text-[#6b994b]'>milin@india1charger</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a></li>
+                            <li>7.1. If you have any questions about this privacy policy, please contact us at Email:  <a href='mailto:info@nilaithal.com' className='text-[#6b994b]'>info@nilaithal.com</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a></li>
                         </ul>
                     </div>
 

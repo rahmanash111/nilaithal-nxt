@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
                     <div className='flex flex-col gap-4'>
                         <h5 className='font-semibold text-xl'>7. Contact Us</h5>
                         <ul className='flex flex-col gap-3 ml-5'>
-                            <li>7.1. If you have any questions about this privacy policy, please contact us at Email:  <a href='mailto:milin@india1charger' className='text-[#6b994b]'>milin@india1charger</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a></li>
+                            <li>7.1. If you have any questions about this privacy policy, please contact us at Email:  <a href='mailto:info@nilaithal.com' className='text-[#6b994b]'>info@nilaithal.com</a> , Give Us a Call: <a href='tel:+9199629 93939' className='text-[#6b994b]'>+91-99629 93939</a></li>
                         </ul>
                     </div>
 
@@ -87,10 +87,10 @@ const PrivacyPolicy = () => {
                                     If you are unable to access the application, you can request account
                                     deletion by contacting us at{" "}
                                     <a
-                                        href="mailto:support@indiaonecharger.com"
+                                        href="mailto:info@nilaithal.com"
                                         className="text-[#6b994b]"
                                     >
-                                        support@indiaonecharger.com
+                                        info@nilaithal.com
                                     </a>.
                                 </li>
                             </ul>

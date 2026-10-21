@@ -36,8 +36,7 @@ const faqs = [
       "You need your Aadhaar card, electricity bill (EB consumer number), property ownership proof, and a bank account linked to your Aadhaar. Nilaithal's team will guide you through exactly what's required at each step of the application process.",
   },
 ];
-// 2626 - 63098
-// 5869 - 840
+
 function FaqCard({ icon: Icon, question, answer, isOpen, onToggle }) {
   return (
     <div className="rounded-2xl bg-white p-5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.1)] ring-1 ring-black/3">
@@ -106,7 +105,7 @@ export default function FAQ() {
           </a> */}
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {faqs.map((faq, i) => (
             <FaqCard
               key={faq.question}
