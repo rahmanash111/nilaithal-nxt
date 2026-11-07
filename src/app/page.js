@@ -23,7 +23,29 @@ export default function Home() {
       <OurStoryTimeline />
       <ProcessSteps />
       <FAQ />
-      <CTA />
+      <CTA 
+       quote = "Nilaithal's solar solutions has significantly reduced out energy costs and  helped us move toward a sustainable future."
+       author = {
+          <>
+            <p className="font-semibold">Milin Jacob</p>
+            <p>Managing Director, Nilaithal</p>
+          </>
+        } 
+       heading = {
+          <>
+            <span className="text-green-900">Ready</span> to Make the Switch to
+            <br />
+            <span className="text-green-600">Clean Energy</span>?
+          </>
+        }
+        subheading = {
+          <>
+            Let's build a sustainable future together.
+            <br />
+            Get a free consultation Today!
+          </>
+        }
+      />
     </div>
   );
 }
